@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftCart - Home</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+      body { font-family: "Inter", sans-serif; }
+    </style>
+  </head>
+  <body class="bg-base-100">
+    
+    <div class="sticky top-0 z-50 w-full bg-base-100 shadow-md">
+      <div class="navbar max-w-6xl mx-auto px-4">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <i class="fa-solid fa-bars text-lg"></i>
+            </div>
+            <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contacts</a></li>
+            </ul>
+          </div>
+          <a href="index.html" class="btn btn-ghost text-xl text-indigo-600 font-bold">SwiftCart</a>
+        </div>
+
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 font-medium">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end">
+          <button onclick="toggleCartModal()" class="btn btn-ghost btn-circle relative">
+            <i class="fa-solid fa-cart-shopping text-xl"></i>
+            <span id="cart-count" class="badge badge-sm badge-primary indicator-item absolute top-0 right-0 hidden">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero min-h-[60vh]" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1470&auto=format&fit=crop');">
+      <div class="hero-overlay bg-black/50"></div>
+      <div class="hero-content text-neutral-content text-left w-full max-w-4xl mx-auto px-4 py-16">
+        <div>
+          <h1 class="mb-5 text-4xl lg:text-6xl font-bold">Best Collection For You</h1>
+          <p class="mb-6 text-lg max-w-xl">Discover the best products at unbeatable prices. Shop now and experience the ultimate convenience of online shopping!</p>
+          <a href="products.html" class="btn btn-primary btn-lg border-none bg-indigo-600 hover:bg-indigo-700 text-white">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full bg-slate-50 py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="card bg-white shadow-lg pt-8 text-center relative overflow-visible">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-truck-fast text-white"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="font-bold text-lg">Fast Delivery</h3>
+              <p class="text-sm text-gray-500">Fast shipping to your doorstep.</p>
+            </div>
+          </div>
+          
+          <div class="card bg-white shadow-lg pt-8 text-center relative overflow-visible">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-lock text-white"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="font-bold text-lg">Secure Payment</h3>
+              <p class="text-sm text-gray-500">100% secure payment gateways.</p>
+            </div>
+          </div>
+
+          <div class="card bg-white shadow-lg pt-8 text-center relative overflow-visible">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-tags text-white"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="font-bold text-lg">Best Prices</h3>
+              <p class="text-sm text-gray-500">Competitive prices on all items.</p>
+            </div>
+          </div>
+
+          <div class="card bg-white shadow-lg pt-8 text-center relative overflow-visible">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-headset text-white"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="font-bold text-lg">24/7 Support</h3>
+              <p class="text-sm text-gray-500">We are here to help anytime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto py-16 px-4">
+      <h2 class="text-3xl font-bold text-center mb-10">Trending Products</h2>
+      <div id="trending-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+        <span class="loading loading-spinner loading-lg col-span-full text-primary"></span>
+      </div>
+    </div>
+
+    <dialog id="my_modal_details" class="modal">
+      <div id="details-modal-container" class="contents"></div>
+    </dialog>
+
+    <dialog id="cart_modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg mb-4">Your Shopping Cart</h3>
+        <div id="cart-items-container" class="space-y-4 max-h-60 overflow-y-auto">
+            </div>
+        <div class="divider"></div>
+        <div class="flex justify-between items-center font-bold text-lg">
+          <span>Total:</span>
+          <span id="cart-total-price">$0.00</span>
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn btn-ghost">Close</button>
+            <button onclick="alert('Checkout functionality coming soon!')" class="btn btn-primary text-white">Checkout</button>
+          </form>
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop"><button>close</button></form>
+    </dialog>
+
+<footer class="bg-gray-900 text-gray-300 py-10">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    
+    <div class="flex flex-col items-center md:items-start">
+      <h2 class="text-2xl font-bold text-indigo-500 mb-2">SwiftCart</h2>
+      <p class="max-w-xs text-sm leading-relaxed text-gray-400">
+        Your one-stop shop for fashion and lifestyle. Quality products, fast delivery, and excellent support.
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center md:items-start">
+      <h6 class="font-bold text-white uppercase mb-4 tracking-wider">Quick Links</h6>
+      <a href="index.html" class="link link-hover text-gray-400 hover:text-white mb-2">Home</a>
+      <a href="products.html" class="link link-hover text-gray-400 hover:text-white mb-2">Products</a>
+      <a href="#" class="link link-hover text-gray-400 hover:text-white mb-2">About Us</a>
+      <a href="#" class="link link-hover text-gray-400 hover:text-white">Contact</a>
+    </div>
+
+    <div class="flex flex-col items-center md:items-start">
+      <h6 class="font-bold text-white uppercase mb-4 tracking-wider">Newsletter</h6>
+      <p class="text-sm text-gray-400 mb-4">Subscribe to get the latest updates.</p>
+      
+      <form onsubmit="event.preventDefault()" class="w-full max-w-xs">
+        <div class="join w-full">
+          <input 
+            type="email" 
+            placeholder="username@site.com" 
+            class="input input-bordered join-item w-full bg-gray-800 border-gray-700 text-white focus:outline-none" 
+            required
+          />
+          <button class="btn btn-primary join-item bg-indigo-600 border-none hover:bg-indigo-700 text-white">
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  
+  <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 SwiftCart. All rights reserved.</p>
+  </div>
+</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
